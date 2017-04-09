@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
-
+  has_many :attendees, dependent: :destroy
+  
   validates :title, presence: true
   attr_accessor :date_range
 

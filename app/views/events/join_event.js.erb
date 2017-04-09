@@ -1,0 +1,6 @@
+$('.join_event').attr("href","#");
+$('.join_event').text("Joined");
+$('.join_event').addClass("btn-success");
+<% attendee_name = @attendee.user.name %>
+$('.list-group').append("<li class='list-group-item'><%= attendee_name %></li>")
+//$('#edit_event').modal('show');

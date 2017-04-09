@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   	collection do
       get :my_calender
       get :my_events
+      post :join_event
     end
 
   end 

@@ -17,15 +17,25 @@
                     class: 'btn btn-danger', 
                     data: { confirm: 'Are you sure?' }, 
                     remote: true unless @event.new_record? %>
+
+
+
       </div>
-  <% else %>
-     <div class="form-actions">
-      </div>
-  <% end %>
+   <% end %>
+   <% unless @event.attendees.where(user_id: current_user.id).present? %>         
+         <%= link_to "Join Event", join_event_events_path(event_id: @event.id, user_id: current_user.id), :confirm => 'Are you want to join?', :class => "btn join_event btn-info", :method => :post,remote: true %>
+         <% else %>
+         <%= link_to "Joined","#",:class => "btn btn-success" %>
+        <% end %>
+        <div>Those who are going </div>
+          <ul class="list-group">
+        <% @event.attendees.each do |attendee| %>
+          <li class="list-group-item"><%= attendee.user.name %></li>
+        <% end %>
+         </ul>
 <% end %>
 <% else %> 
 <p>
 Please login before create or edit any event
 <p>
-
 <% end %>
