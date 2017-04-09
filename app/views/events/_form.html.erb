@@ -22,8 +22,10 @@
 
       </div>
    <% end %>
-   <% unless @event.attendees.where(user_id: current_user.id).present? %>         
-         <%= link_to "Join Event", join_event_events_path(event_id: @event.id, user_id: current_user.id), :confirm => 'Are you want to join?', :class => "btn join_event btn-info", :method => :post,remote: true %>
+        <% unless @event.attendees.where(user_id: current_user.id).present? %> 
+         <% if @event.user_id != current_user.id %>        
+           <%= link_to "Join Event", join_event_events_path(event_id: @event.id, user_id: current_user.id), :confirm => 'Are you want to join?', :class => "btn join_event btn-info", :method => :post,remote: true %>
+          <% end %>
          <% else %>
          <%= link_to "Joined","#",:class => "btn btn-success" %>
         <% end %>
