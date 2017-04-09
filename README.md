@@ -42,4 +42,25 @@ Things you may want to cover:
 
 - We can priotize the event using color.
 
+- I. have implemented drag and drop feature of particular event suppose if user created any event then they can transfer it to any other date by draging and droping to new date
+
+- If any user have a event on particular date then it will give you count in overall event calender and other place it gives a normal display of event
+
+- If user is creating event then event owner can't be able to join the event
+
+- If I am not the owner of event then I can't join the event 
+
+- Dynamically updation of event over multiple event and all the event are diffrent types
+
+- I have implement two diffrent view of event calender one for particular event and another one for all the user events 
+
+- If User is not logged in then User are not able to see any detail of event ,Can see only front calender.
+
+- I used the Rails Remote Js Call to update event and fetch and destroy over it.
+
+- Once the call is up it's fetch the event info in json format 
+
+
+
+
 
